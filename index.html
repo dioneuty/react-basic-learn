@@ -12,14 +12,23 @@
         <script type="text/babel"> 
             const app = document.getElementById('app');
             
-            function Header() {
-                return <h1>Hello World</h1>;
+            function Header({title}) {
+                return <h1>{title ? title : 'Default Title'}</h1>;
             }
 
             function HomePage() {
+                const names = ['홍길동', '이순신', '장보고'];
+
                 return (
                     <div>                        
-                        <Header /> {/* Header 컴포넌트를 중첩함 */}
+                        <Header title="Hello World" /> {/* Header 컴포넌트를 중첩함 */}
+                        <Header title="Hello React" />
+                        <Header />
+                        <ul>
+                            {names.map((name) => (
+                                <li key={name}>{name}</li>
+                            ))}
+                        </ul>
                     </div>
                 );
             }
