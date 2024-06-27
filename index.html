@@ -11,7 +11,20 @@
         <!-- type='text/jsx' -->
         <script type="text/babel"> 
             const app = document.getElementById('app');
-            ReactDOM.render(<h1>Hello World</h1>, app);        
+            
+            function Header() {
+                return <h1>Hello World</h1>;
+            }
+
+            function HomePage() {
+                return (
+                    <div>                        
+                        <Header /> {/* Header 컴포넌트를 중첩함 */}
+                    </div>
+                );
+            }
+
+            ReactDOM.render(<HomePage />, app);
         </script>
     </body>
 </html>
