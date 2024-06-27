@@ -7,7 +7,7 @@ function Header({title}) {
 export default function HomePage() {
     const names = ['홍길동', '이순신', '장보고'];
 
-    const [likes, setLikes] = React.useState(0);
+    const [likes, setLikes] = useState(0);
 
     function handleClick() {
         setLikes(likes + 1);
